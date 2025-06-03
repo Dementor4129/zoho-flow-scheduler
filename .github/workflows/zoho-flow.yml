@@ -1,4 +1,5 @@
-# Trigger reset to activate cron
+# Second attempt to activate cron
+
 name: Zoho Flow Tetikleyici
 
 on:
