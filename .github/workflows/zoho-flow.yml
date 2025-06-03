@@ -1,0 +1,16 @@
+name: Zoho Flow Tetikleyici
+
+on:
+  schedule:
+    - cron: '* * * * *'  # her 1 dakikada bir çalışır
+  workflow_dispatch:
+
+jobs:
+  call-zoho-flow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Zoho Flow webhook'unu POST ile tetikle
+        run: |
+          curl -X POST "https://flow.zoho.com/811142653/flow/webhook/incoming?zapikey=1001.3e41d9d402d03882999fb1a51621a11e.02b113ede9683c83a3927ce713dcc1ad&isdebug=false" \
+          -H "Content-Type: application/json" \
+          -d '{"kaynak":"GitHub Actions"}'
